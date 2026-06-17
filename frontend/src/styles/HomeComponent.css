@@ -1,0 +1,194 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* ❌ no horizontal scroll */
+  /* width: 100%; */
+}
+
+
+/* ===== NAVBAR ===== */
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, #1976d2, #0d47a1);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navBar h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+/* Right side buttons */
+.navBar div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* History text */
+.navBar p {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Logout button */
+.navBar button {
+  background: white;
+  color: #1976d2;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 6px 12px;
+  transition: 0.3s;
+}
+
+.navBar button:hover {
+  background: #e3f2fd;
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+  .meetContainer {
+  display: flex;
+  height: 100%;   /* full screen height */
+  overflow: hidden;
+}
+
+
+/* LEFT SIDE */
+/* MAIN LEFT PANEL */
+.leftPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  height: 100%;
+}
+
+/* INNER BOX */
+.leftPanel > div {
+  /* max-width: 500px; */
+  text-align: center;
+}
+
+/* HEADING */
+.leftPanel h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+/* INPUT + BUTTON ROW */
+.leftPanel .MuiTextField-root {
+  width: 250px;
+}
+
+.leftPanel .MuiButton-root {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+/* FLEX ROW */
+.leftPanel div > div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .leftPanel h2 {
+    font-size: 22px;
+  }
+
+  .leftPanel div > div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftPanel .MuiTextField-root {
+    width: 100%;
+  }
+}
+
+/* RIGHT SIDE */
+.rightPanel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+  height: 100vh;
+}
+
+.rightPanel img {
+  width: 70%;
+  max-width: 400px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+@media (max-width: 768px) {
+  .meetContainer {
+    flex-direction: column;
+  }
+
+  .leftPanel {
+    flex: none;
+    height: 60vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .rightPanel {
+    flex: none;
+    height: 40vh;
+  }
+
+  .leftPanel h2 {
+    font-size: 20px;
+  }
+
+  .leftPanel .MuiTextField-root {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .leftPanel div > div {
+    flex-direction: column;
+    gap: 10px;
+  }
+   .navBar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .navBar div {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1024px) {
+  .leftPanel h2 {
+    font-size: 24px;
+  }
+
+  .rightPanel img {
+    width: 80%;
+  }
+}
