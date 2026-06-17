@@ -86,7 +86,6 @@ const addToHistory = async (req, res) => {
 
         const newMeeting = new Meeting({
             user_id: user.username,
-            username:user.username,
             meetingCode: meeting_code
         })
 
